@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:wather_app/pages/search_city.dart';
-import 'package:wather_app/widgets/MyBatton.dart';
-import 'package:wather_app/widgets/text_field.dart';
+import 'package:wather_app2/widgets/MyBatoon.dart';
+import 'package:wather_app2/widgets/text_field.dart';
+
 
 class SingIn extends StatefulWidget {
   @override
@@ -74,9 +74,9 @@ class _SingInState extends State<SingIn> {
                   ),
                   onPressed: () {
                     if(formKey.currentState!.validate()){
-                      Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return SearchCity();
-                    }));
+                     // Navigator.push(context, MaterialPageRoute(builder: (context){
+                      //return SearchCity();
+                   // }));
                     }
                     
                   },
