@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:wather_app2/widgets/wather_ui.dart';
+
+import '../widgets/wather_info_card.dart';
 
 
 class WeatherAppUI extends StatelessWidget {
