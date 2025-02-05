@@ -1,4 +1,4 @@
-import 'dart:math';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 
@@ -21,11 +21,13 @@ class SearchCity extends StatelessWidget {
         centerTitle: true,
       ), 
 
-      body: const Padding(
+      body:  Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12),
         child:  Center(
           child: TextField(
-             
+             onSubmitted: (value) {
+               log(value);
+             },
             decoration:const InputDecoration(
               hintText:" search for your city " ,
               border: OutlineInputBorder(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wather_app2/pages/search_city.dart';
 import 'package:wather_app2/widgets/MyBatoon.dart';
 import 'package:wather_app2/widgets/text_field.dart';
 
@@ -74,9 +75,9 @@ class _SingInState extends State<SingIn> {
                   ),
                   onPressed: () {
                     if(formKey.currentState!.validate()){
-                     // Navigator.push(context, MaterialPageRoute(builder: (context){
-                      //return SearchCity();
-                   // }));
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return SearchCity();
+                   }));
                     }
                     
                   },
