@@ -5,12 +5,16 @@ import 'package:wather_app2/model/Wather_modal.dart';
 import 'package:wather_app2/services/wather_services.dart';
 
 class GetWatherCubit extends Cubit<WatherStates> {
-  GetWatherCubit(super.initialState);
+  GetWatherCubit() :super(WeatherInitial());
 
   fetchWeather({required String cityName}) async{
-    WeatherModel weatherModel = await WatherServcies(Dio())
-          .getCurrntWather(cityName: cityName);
-      
+    try {
+  WeatherModel weatherModel = await WatherServcies(Dio())
+        .getCurrntWather(cityName: cityName);
+    emit(WatherLodeadState());  
+}  catch (e) {
+  emit(WatherFaileareState());
+}
   }
 
 }
