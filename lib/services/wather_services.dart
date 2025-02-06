@@ -1,9 +1,9 @@
-import 'dart:convert';
+
+
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
-
-import '../model/wather_Modal.dart';
+import 'package:wather_app2/model/Wather_modal.dart';
 
 class WatherServcies {
   final Dio dio;
@@ -14,7 +14,7 @@ class WatherServcies {
   WatherServcies(this.dio);
 
 
-  Future<WatherModal> getCurrntWather({required String cityName}) async {
+  Future<WeatherModel> getCurrntWather({required String cityName}) async {
     try {
       Response response = await dio.get(
         "$baseUrl/forecast.json?key=$apiKey&q=$cityName&days=7",
@@ -22,7 +22,7 @@ class WatherServcies {
 
 
 
-      WatherModal watherModal = WatherModal.fromJson(response.data);
+      WeatherModel watherModal = WeatherModel.fromJson(response.data);
       return watherModal;
     } on DioException catch (e) {
       final String errMessage = e.response?.data['error']['message'] ??
